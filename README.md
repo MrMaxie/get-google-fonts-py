@@ -1,6 +1,6 @@
 # Get Google Fonts
 
-Tool to download font files from Google Fonts with a properly converted CSS file.
+Tool to download font files from [Google Fonts](https://fonts.google.com/) with a properly converted CSS file.
 
 ```
 Usage: get-google-fonts.exe [OPTIONS]
@@ -21,10 +21,11 @@ Options:
 ```
 
 ### Input helper
-Input accept will accept either incorrect URLs for Google Fonts. The only thing you have to give is query. For example: ```family=Source+Sans+Pro``` will works as ```https://fonts.googleapis.com/css?family=Source+Sans+Pro```.
+Input will accept either incorrect URLs for Google Fonts. The only thing you have to give is query. For example: ```family=Source+Sans+Pro``` will works as ```https://fonts.googleapis.com/css?family=Source+Sans+Pro```.
 
 ### Configuration file
 By default, the script attempts to use the file ```.\getgooglefonts.ini``` if exists, and by default ```--gen-config```  will generate this file for you. With ```--config``` you can to point custom ini file for script or for generating as well. 
+
 ### Forcing other extensions
 If you want to force older extensions of fonts inside downloaded CSS file you must to use proper User-Agent. Actually inside "default configuration" is used User-Agent for Google Chrome v57 under Win10 which gets **.woff2**. For example ```Wget/1.9.1``` will force to use **.ttf** extension.
 
