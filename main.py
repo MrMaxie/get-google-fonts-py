@@ -30,11 +30,11 @@ SCRIPT_ROOT = get_main_dir()
 	default=None,
 	help='Relative path to fonts. This path will be inserted before each font in the CSS file.')
 @click.option(
-	'--name-font',
+	'--font-name',
 	default=None,
 	help='Template string for result name fonts.')
 @click.option(
-	'--name-css',
+	'--css-name',
 	default=None,
 	help='Name of css file.')
 @click.option(
@@ -59,8 +59,8 @@ def main(**args):
 	cfg['input']     = 'https://fonts.googleapis.com/css?family=Roboto'
 	cfg['output']    = '.\\fonts'
 	cfg['path']      = '/'
-	cfg['name_font'] = '%(family)s-%(weight)s-%(comment)s.%(ext)s'
-	cfg['name_css']  = 'fonts.css'
+	cfg['font_name'] = '%(family)s-%(weight)s-%(comment)s.%(ext)s'
+	cfg['css_name']  = 'fonts.css'
 	cfg['agent']     = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
 	cfg['config']    = os.path.abspath(SCRIPT_ROOT + '\\getgooglefonts.ini')
 
@@ -167,7 +167,7 @@ def main(**args):
 					font_name = m.group(1)
 				if m.group(2) is not None:
 					font_ext = m.group(2)
-			font_new_name = cfg['name_font'] % {
+			font_new_name = cfg['font_name'] % {
 				'comment': comment,
 				'family': family,
 				'weight': weight,
@@ -193,7 +193,7 @@ def main(**args):
 		os.makedirs(os.path.abspath(cfg['output']))
 
 	# writing new css
-	local_css = open(os.path.abspath(cfg['output'] + '\\' + cfg['name_css']), 'wb')
+	local_css = open(os.path.abspath(cfg['output'] + '\\' + cfg['css_name']), 'wb')
 	local_css.write(css)
 
 	def download_font(url, file, filename):
