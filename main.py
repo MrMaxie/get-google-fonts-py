@@ -168,8 +168,8 @@ def main(**args):
 				if m.group(2) is not None:
 					font_ext = m.group(2)
 			font_new_name = cfg['font_name'] % {
-				'comment': comment,
-				'family': family,
+				'comment': re.sub(r'\s+', '_', comment),
+				'family': re.sub(r'\s+', '_', family),
 				'weight': weight,
 				'name': font_name,
 				'ext': font_ext
