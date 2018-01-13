@@ -1,4 +1,13 @@
+# Deprecated
+
+Entire script with few new features are created in JS right now and distributed is by NPM.
+
+See: https://github.com/MrMaxie/get-google-fonts.
+
 # Get Google Fonts
+
+![status: depraced](https://img.shields.io/badge/status-depraced-lightgrey.svg)
+![python: 2.7](https://img.shields.io/badge/python-2.7-blue.svg)
 
 Tool to download font files from [Google Fonts](https://fonts.google.com/) with a properly converted CSS file.
 
